@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar NbM-1.2.one-jar.jar $@

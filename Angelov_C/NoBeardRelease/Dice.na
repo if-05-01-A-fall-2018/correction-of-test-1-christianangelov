@@ -1,0 +1,70 @@
+"No1:No2:res:"
+inc 12
+
+#ASK First No
+lit 0
+lit 4
+lit 5
+out 2
+
+#Read first number
+la 0 32
+la 0 36
+in 0
+out 3
+
+#ASK Second No
+lit 4
+lit 4
+lit 5
+out 2
+
+#Read Second no
+la 0 36
+la 0 40
+in 0
+out 3
+
+lv 0 32
+lv 0 36
+rel 2
+tjmp .true
+lv 0 32
+lv 0 36
+rel 2
+fjmp .false
+
+
+# (no1 + no2)*2
+.true
+la 0 40
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+
+jmp .res
+
+# no1 + no2
+.false
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+jmp .res
+
+
+.res
+# Out put result
+lit 8
+lit 4
+lit 5
+out 2
+
+lv 0 40
+out 0
+
+halt
